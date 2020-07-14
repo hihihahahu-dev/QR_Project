@@ -62,6 +62,21 @@ public class MainActivity extends AppCompatActivity {
                 queue.add(multRequest);
             }
         });
+        //Test the link
+        final Button button3 = findViewById(R.id.tabs);
+        button3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Testing
+
+                final TextView mTextView = (TextView) findViewById(R.id.textView2);
+                String url3 = "http://api.qrserver.com/v1/read-qr-code/";
+                VolleyMultipartRequest multRequest = QRCode.GetQRPhoto(url3, mTextView, getFileDataFromDrawable(bitmap));
+                queue.add(multRequest);
+            }
+        });
+
+
+
     }
 
     public byte[] getFileDataFromDrawable(Bitmap bitmap) {

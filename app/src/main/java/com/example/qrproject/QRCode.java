@@ -1,26 +1,19 @@
 package com.example.qrproject;
 
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
-import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
