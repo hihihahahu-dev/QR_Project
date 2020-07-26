@@ -1,8 +1,10 @@
 package com.example.qrproject;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
@@ -13,7 +15,9 @@ import com.android.volley.toolbox.JsonArrayRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,6 +60,7 @@ public class QRCode {
                             text.setText(obj.toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            text.setText("looking bad.");
                         }
                     }
                 },
@@ -63,13 +68,13 @@ public class QRCode {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
+                        text.setText("looking badddd.");
                     }
                 }) {
             @Override
             protected Map<String, DataPart> getByteData() {
                 Map<String, DataPart> params = new HashMap<>();
-                long imaginary = System.currentTimeMillis();
-                params.put("file", new DataPart(imaginary + ".png", Imagery));
+                params.put("file", new DataPart("file", Imagery, "file"));
                 return params;
             }
         };
